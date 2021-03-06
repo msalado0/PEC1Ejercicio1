@@ -2,12 +2,56 @@
 <!-- Este layout corresponde a la vista del frament BookDetailFragment,
 y que visualizara la informacion correspondiente a los detalles de un libro.
 -->
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_detail"
-    style="?android:attr/textAppearanceLarge"
+
+<!-- En primer lugar, crearemos un LinearLayout global con una orientacion horizontal,
+que recogera un ImageView y otro LinearLayout
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:textIsSelectable="true"
-    tools:context=".BookDetailFragment" />
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imagen_detail_book"
+        android:layout_width="@dimen/imagen_width"
+        android:layout_height="@dimen/imagen_heigth"
+        android:layout_margin="@dimen/imagen_margin"
+        android:src="@mipmap/libroejercicio2"/>
+
+<!-- En este LinearLayout tendra una orientacion vertical y recogera el autor, fecha y
+descripcion del libro
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="@dimen/text_margin"
+        android:layout_marginEnd="@dimen/text_margin">
+
+        <TextView
+            android:id="@+id/autor_detail_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autor"
+            android:textSize="@dimen/text_size_autor"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/fecha_detail_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha"
+            android:textSize="@dimen/text_size_fecha"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/descripcion_detail_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripcion"
+            android:textSize="@dimen/text_size_descripcion"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+</LinearLayout>

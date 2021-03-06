@@ -26,6 +26,11 @@ public class BookListActivity extends AppCompatActivity {
     para saber en que tipo de pantalla estamos, si estamos en un ancho mayor de 900 nuestra aplicacion mostrara
     una visual algo cambiada.
      */
+
+    /*
+    La activity se modificara desde el ejercicio 2 en adelante para que la aplicacion, pueda manejar los nuevos
+    cambios añadidos en las clases que se encuentran en el paquete modelo.
+     */
     private RecyclerView recyclerView;
     private List<BookItem> listaLibros;
     private boolean detailFragment;
@@ -48,14 +53,19 @@ public class BookListActivity extends AppCompatActivity {
         }
 
         /*
-        Cargamos nuestra lista de libros con un metodo de utilidad declarado en la clase BookModel.
+        Cargamos nuestra lista de libros con la variable static declarada y cargada con la informacion de la clase
+        java BookModel.
          */
-        listaLibros = BookModel.rellenarListaLibros();
+        listaLibros = BookModel.ITEMS;
 
         /*
         Una vez sepamos en que clase de pantalla se esta ejecutando la aplicacion, y tengamos cargada nuestra
         lista de libros, es necesarios enviar la informacion a nuestro adaptador, para que visualice los datos,
         por lo que lanzamos el adaptador.
+         */
+        /*
+        Como se puede observar, nuestro adaptador lo hemos hecho en una clase java independiente, esto es debido a que en el
+        ejercicio 1 se implemento de forma independente a esta activity, por lo que seguimos con la misma dinamica.
          */
         recyclerView = findViewById(R.id.item_list);
         BookRecyclerViewAdapter view = new BookRecyclerViewAdapter(listaLibros, detailFragment, this);
