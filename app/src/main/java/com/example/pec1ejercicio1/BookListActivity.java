@@ -1,14 +1,23 @@
 package com.example.pec1ejercicio1;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.example.pec1ejercicio1.modelo.BookItem;
 import com.example.pec1ejercicio1.modelo.BookModel;
+import com.example.pec1ejercicio1.ordenar.ordenAutor;
+import com.example.pec1ejercicio1.ordenar.ordenTitle;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 /*
 Esta aplicación se realizo teniendo como base el modelo Maestro/detalle previamente definido, pero hemos adaptado
@@ -71,4 +80,40 @@ public class BookListActivity extends AppCompatActivity {
         BookRecyclerViewAdapter view = new BookRecyclerViewAdapter(listaLibros, detailFragment, this);
         recyclerView.setAdapter(view);
     }
+
+    /*
+    Con este metodo, llamamos al xml que contiene los objetos para crear nuestro menu.
+     */
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        MenuInflater inflater = getMenuInflater ();
+        inflater.inflate (R.menu.menu_list,menu);
+        return true;
+    }
+
+    /*
+    Este metodo capturaremos las iteraciones de un usuario con el menu, para saber que funcion desea
+    realizar, en este caso, que tipo de ordenacion desea ver en pantalla. (ojo, es obligatorio poner default)
+
+    Se realizara una reordenacion de la lista de libros, y luego se lo enviaremos al adaptador, para que vuelva a cargar
+    la pantalla con dicho orden, para ello nos ayudaremos de dos clases javas que hemos creado en el paquete ordenar.
+     */
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public boolean onOptionsItemSelected(MenuItem item) {
+        BookRecyclerViewAdapter view;
+        switch (item.getItemId()) {
+            case R.id.order_by_title:
+                listaLibros.sort(new ordenTitle());
+                view = new BookRecyclerViewAdapter(listaLibros, detailFragment, this);
+                recyclerView.setAdapter(view);
+                return true;
+
+            default:
+                listaLibros.sort(new ordenAutor());
+                view = new BookRecyclerViewAdapter(listaLibros, detailFragment, this);
+                recyclerView.setAdapter(view);
+                return true;
+        }
+    }
+
 }

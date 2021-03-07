@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Pec1Android</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="orderbyTitle">Sort by title</string>
+    <string name="orderbyAutor">Sort by autor</string>
 </resources>

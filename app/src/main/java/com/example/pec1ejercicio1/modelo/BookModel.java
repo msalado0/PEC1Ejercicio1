@@ -27,6 +27,16 @@ public class BookModel {
         BookItem book2 = new BookItem(1, "Title2", "Author2", new Date(), "Description2", null);
         ITEMS.add (book1);
         ITEMS.add (book2);
+
+        //Añadimos mas libros
+        BookItem book3 = new BookItem(2, "Title5", "Author3", new Date(), "Description3", null);
+        BookItem book4 = new BookItem(3, "Title3", "Author6", new Date(), "Description6", null);
+        BookItem book5 = new BookItem(4, "Title6", "Author4", new Date(), "Description4", null);
+        BookItem book6 = new BookItem(5, "Title4", "Author5", new Date(), "Description5", null);
+        ITEMS.add (book3);
+        ITEMS.add (book4);
+        ITEMS.add (book5);
+        ITEMS.add (book6);
     }
 
 }
