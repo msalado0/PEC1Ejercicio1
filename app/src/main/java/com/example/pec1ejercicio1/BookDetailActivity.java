@@ -43,8 +43,14 @@ public class BookDetailActivity extends AppCompatActivity {
         Se recoge la informacion provenientes del adaptador, y se enviara al Layout correspondiente a esta actividad.
          */
         Bundle bundle = new Bundle();
-        bundle.putString("id",
-                getIntent().getStringExtra("id"));
+        bundle.putString("titulo",
+                getIntent().getStringExtra("titulo"));
+        bundle.putString("autor",
+                getIntent().getStringExtra("autor"));
+        bundle.putString("fecha",
+                getIntent().getStringExtra("fecha"));
+        bundle.putString("descripcion",
+                getIntent().getStringExtra("descripcion"));
 
         BookDetailFragment bookFragment = new BookDetailFragment();
         bookFragment.setArguments(bundle);

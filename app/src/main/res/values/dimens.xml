@@ -4,4 +4,19 @@
     <dimen name="app_bar_height">200dp</dimen>
     <dimen name="item_width">200dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="text_margin_left">8dp</dimen>
+    <dimen name="text_margin_right">8dp</dimen>
+    <dimen name="text_margin_bottom">8dp</dimen>
+    <dimen name="text_margin_top">8dp</dimen>
+    <dimen name="text_size_title">18sp</dimen>
+    <dimen name="text_size_autor">18sp</dimen>
+    <dimen name="text_size_fecha">18sp</dimen>
+    <dimen name="text_size_descripcion">18sp</dimen>
+    <dimen name="card_margin_top">10dp</dimen>
+    <dimen name="card_margin_bottom">10dp</dimen>
+
+    <dimen name="imagen_width">110dp</dimen>
+    <dimen name="imagen_heigth">160dp</dimen>
+    <dimen name="imagen_margin">16dp</dimen>
+
 </resources>
