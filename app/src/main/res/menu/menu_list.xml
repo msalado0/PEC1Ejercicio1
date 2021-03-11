@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--
+Hemos creado un xml llamado menu_list, el cual contiene 2 objetos, estos objetos son
+dos evento que podra lanzar el usuario para ordenar las listas de los libros.
+-->
+
+<item android:id="@+id/order_by_title"
+    android:title="@string/orderbyTitle" />
+
+<item android:id="@+id/order_by_autor"
+    android:title="@string/orderbyAutor" />
+</menu>

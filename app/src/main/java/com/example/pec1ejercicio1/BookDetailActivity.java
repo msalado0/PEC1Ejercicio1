@@ -16,6 +16,7 @@ a la pantalla anterior a traves de un metodo ya diseñado del propio android.
  */
 public class BookDetailActivity extends AppCompatActivity {
 
+    private String cogerId = "id";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +44,16 @@ public class BookDetailActivity extends AppCompatActivity {
         Se recoge la informacion provenientes del adaptador, y se enviara al Layout correspondiente a esta actividad.
          */
         Bundle bundle = new Bundle();
-        bundle.putString("id",
-                getIntent().getStringExtra("id"));
+        bundle.putInt("id",
+                getIntent().getIntExtra("id", 0));
+        bundle.putString("titulo",
+                getIntent().getStringExtra("titulo"));
+        bundle.putString("autor",
+                getIntent().getStringExtra("autor"));
+        bundle.putString("fecha",
+                getIntent().getStringExtra("fecha"));
+        bundle.putString("descripcion",
+                getIntent().getStringExtra("descripcion"));
 
         BookDetailFragment bookFragment = new BookDetailFragment();
         bookFragment.setArguments(bundle);
